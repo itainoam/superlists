@@ -14,7 +14,7 @@ class NewVisitorTest(unittest.TestCase):
     # she notices the page and title header mentions to-do lists
     self.assertIn('To-Do', self.browser.title)
     self.fail('Finish the test!')
-§
+
 
 if __name__ == '__main__':
     unittest.main()
