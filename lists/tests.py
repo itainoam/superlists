@@ -29,8 +29,8 @@ class HomePageTest(TestCase):
 
     response = self.client.get('/')
 
-    self.assertIn('item1',response.content.decode())
-    self.assertIn('item2',response.content.decode())
+    self.assertIn('itemy1',response.content.decode())
+    self.assertIn('itemy1',response.content.decode())
 
 class ItemModelTest(TestCase):
   def test_saving_and_retrieving_items(self):

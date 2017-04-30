@@ -1,0 +1,14 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+  "python.pythonPath": "/Users/itai/.virtualenvs/superlists/bin/python",
+  "python.unitTest.unittestArgs": [
+    "-v",
+    "-s",
+    "./lists",
+    "-p",
+    "test*.py"
+  ],
+  "python.unitTest.unittestEnabled": true,
+  "python.unitTest.pyTestEnabled": false,
+  "python.unitTest.nosetestsEnabled": false
+}
