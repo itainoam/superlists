@@ -10,6 +10,8 @@ class NewVisitorTest(LiveServerTestCase):
   
   def setUp(self):
     self.browser = webdriver.Firefox()
+    # hides firefox
+    self.browser.set_window_position(-2000,0)
 
   def wait_for_row_in_list_table(self,row_text):
     start_time = time.time()
@@ -84,6 +86,9 @@ class NewVisitorTest(LiveServerTestCase):
     ## Edith's session
     self.browser.quit()
     self.browser = webdriver.Firefox()
+    # hides firefox
+    self.browser.set_window_position(-2000,0)
+
 
     # Francis visits home page. There is no sign of Edith's list
     self.browser.get(self.live_server_url)
