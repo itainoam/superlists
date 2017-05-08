@@ -1,11 +1,13 @@
-server {
-        listen 80;
-        server_name superlists-staging.itai.com;
-        location /static {
-                alias /home/inoam/sites/superlists-staging.itainoam.com/static;
-        }
-        location / {
-                proxy_set_header Host $host;
-                proxy_pass http://unix:/tmp/superlists-staging.itainoam.com.socket;
-        }
-}
+[Unit]
+Description=Gunicorn server for SITENAME
+
+[Service]
+Restart=on-failure
+User=inoam
+WorkingDirectory=/home/inoam/sites/SITENAME/source
+ExecStart=/home/inoam/sites/SITENAME/virtualenv/bin/gunicorn \
+    --bind unix:/tmp/SITENAME.socket \
+    superlists.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
